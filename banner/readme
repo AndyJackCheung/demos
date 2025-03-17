@@ -1,1 +1,40 @@
-集成轮播图在线图片可点击功能
+集成轮播图在线图片可点击功能：
+
+导入头文件
+#import "ACBannarView.h"
+
+初始化轮播图
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+    [self setBannerAction];
+    
+}
+
+- (void)setBannerAction {
+    CGRect bannerViewFrame = CGRectMake(0, 10 * CIO_SCREEN_WIDTH, CIO_SCREEN_WIDTH, 150 * CIO_SCREEN_WIDTH);
+    bannerViewFrame = CGRectMake(0, 100, CIO_SCREEN_WIDTH, CIO_SCREEN_WIDTH);
+    
+    self.bannerView = [[ACBannarView alloc]initWithFrame:bannerViewFrame viewSize:CGSizeMake(CIO_SCREEN_WIDTH, CIO_SCREEN_WIDTH)];
+    [self getBannerDataAction];
+
+    if (self.bannerArr.count > 0) {
+        NSMutableArray *muArr = [NSMutableArray arrayWithCapacity:0];
+        for (BannerModel *model in self.bannerArr) {
+            [muArr addObject:model.url];
+        }
+        self.bannerView.items = muArr;
+    }
+    
+    self.bannerView.backgroundColor = [UIColor redColor];
+    
+    [self.view addSubview:self.bannerView];
+    
+    //轮播图的图片点击方法
+    [self bannerImageClickAction];
+    
+}
+
+
+
