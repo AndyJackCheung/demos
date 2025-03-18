@@ -10,5 +10,6 @@ pod 'Toast', '4.0.0'
 [self.view makeToast:@"test message" duration:1.5 position:CSToastPositionCenter];
 
 便会显示如下信息弹窗toast
+
 ￼
-/var/folders/sp/877kfvm127j515_z5vltctpm0000gn/T/TemporaryItems/NSIRD_screencaptureui_GQjBI0/截屏2025-03-18 10.47.45.png
+<img width="209" alt="截屏2025-03-18 10 48 44" src="https://github.com/user-attachments/assets/24a7e099-01a2-48c7-a051-f71a412b9904" />
